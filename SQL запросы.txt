@@ -1,0 +1,15 @@
+1)SELECT * FROM Managers WHERE Phone IS NOT NULL
+
+2)SELECT Count FROM Sells WHERE Date = '2021-06-20'
+
+3)SELECT Products.Name AS Name, AVG(sum) AS Sum FROM Sells JOIN Products ON Products.ID = Sells.ID_Prod WHERE Products.Name = 'Фанера' 
+
+4)SELECT Managers.Fio AS Fio, SUM(Sells.Sum) AS Sum, Products.Name AS Name FROM Managers JOIN Sells ON Managers.ID = Sells.ID_Manag JOIN Products ON Products.ID = Sells.ID_Prod WHERE Products.Name = 'ОСБ' GROUP BY Managers.Fio
+
+5)SELECT Managers.Fio AS Fio, Products.Name AS Name FROM Managers JOIN Sells ON Sells.ID_Manag = Managers.ID JOIN Products ON Products.ID = Sells.ID_Prod WHERE Sells.Date = '2021-08-22' 
+
+6)SELECT * FROM Products WHERE Name LIKE '%Фанера%' AND Cost >= 1750
+
+7)SELECT * FROM Sells ORDER BY MONTH(Date)
+
+8)SELECT Name, COUNT(Name) FROM Products WHERE COUNT(Name) > 1 GROUP BY Name
